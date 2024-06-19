@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PicoBotics Controls</title>
+        <style>
+            .controlbutton {
+                height: 100px;
+                width: 100px;
+                margin-left: 50px;
+                margin-right: 50px;
+            }
+
+        </style>
+        <script>
+            function forward() {
+                const http = new XMLHttpRequest();
+                http.open("GET", "/forward", true);
+                http.send();
+            }
+            function backward() {
+                const http = new XMLHttpRequest();
+                http.open("GET", "/backward", true);
+                http.send();
+            }
+            function left() {
+                const http = new XMLHttpRequest();
+                http.open("GET", "/left", true);
+                http.send();
+            }
+            function right() {
+                const http = new XMLHttpRequest();
+                http.open("GET", "/right", true);
+                http.send();
+            }
+            function stop() {
+                const http = new XMLHttpRequest();
+                http.open("GET", "/stop", true);
+                http.send();
+            }
+        </script>
+    </head>
+    <body>
+        <center>
+            <button class="controlbutton" onmousedown="forward();" onmouseup="stop();">Forward</button>
+        </center>
+        <center>
+            <button class="controlbutton" onmousedown="left();" onmouseup="stop();">Left</button>
+            <button class="controlbutton" onmousedown="right();" onmouseup="stop();">Right</button>
+        </center>
+        <center>
+            <button class="controlbutton" onmousedown="backward();" onmouseup="stop();">Backward</button>
+        </center>
+    </body>
+</html>
